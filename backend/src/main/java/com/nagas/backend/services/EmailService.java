@@ -39,7 +39,7 @@ public class EmailService {
                 request.setCc(Arrays.asList(emailTemplate.getCc().split(",")));
             }
 
-            if (emailTemplate.getBcc() != null) {
+            if (!emailTemplate.getBcc().isEmpty() ) {
                 request.setBcc(Arrays.asList(emailTemplate.getBcc().split(",")));
             }
 
