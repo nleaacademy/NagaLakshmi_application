@@ -1,0 +1,24 @@
+INSERT INTO public.email_template(
+	 bcc_recipients, body, cc_recipients, subject, name, to_recipients)
+	VALUES ( '', '<html xmlns:th="https://thymeleaf.org">    
+<table>   
+ <thead>
+  <tr>
+    <th>Application Id</th>
+    <th>Student Name</th>
+    <th>Mobile No</th>
+    <th>Email Id</th>
+    <th>Education Type</th>
+  </tr>
+</thead>
+<tbody>
+<tr th:each="requestApplications:${requestApplication}">
+  <td th:text="${requestApplications.applicationId}"></td>
+  <td th:text="${requestApplications.studentName}"></td>
+  <td th:text="${requestApplications.mobileNo}"></td>
+  <td th:text="${requestApplications.emailId}"></td>
+  <td th:text="${requestApplications.educationType}"></td>
+</tr>
+</tbody> 
+</table>    
+</html>', 'ashokoct7.s@gmail.com', 'Requesting For Education', 'application_request', 'jestinantonyraj@gmail.com');
